@@ -13,4 +13,17 @@ def decode_char(code)
   end
 end
 
+def decode_word(code)
+  word =""
+  items = code.split
+  for item in items
+    $letter_morse.each do |key,value|
+      word += key.to_s if value == item
+    end
+  end
+  puts word
+  return word
+end
+
 decode_char("--..")
+decode_word("-- -.--")
